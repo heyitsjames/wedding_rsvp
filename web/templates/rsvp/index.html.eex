@@ -1,0 +1,32 @@
+<h2>Listing rsvps</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Luncheon</th>
+      <th>Sealing</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for rsvp <- @rsvps do %>
+    <tr>
+      <td><%= rsvp.first_name %></td>
+      <td><%= rsvp.last_name %></td>
+      <td><%= rsvp.luncheon %></td>
+      <td><%= rsvp.sealing %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: rsvp_path(@conn, :show, rsvp), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: rsvp_path(@conn, :edit, rsvp), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: rsvp_path(@conn, :delete, rsvp), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New rsvp", to: rsvp_path(@conn, :new) %>

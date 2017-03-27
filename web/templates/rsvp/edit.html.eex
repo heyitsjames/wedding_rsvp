@@ -1,0 +1,6 @@
+<h2>Edit rsvp</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: rsvp_path(@conn, :update, @rsvp) %>
+
+<%= link "Back", to: rsvp_path(@conn, :index) %>

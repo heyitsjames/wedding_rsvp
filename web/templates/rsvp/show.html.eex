@@ -1,0 +1,28 @@
+<h2>Show rsvp</h2>
+
+<ul>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @rsvp.first_name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @rsvp.last_name %>
+  </li>
+
+  <li>
+    <strong>Luncheon:</strong>
+    <%= @rsvp.luncheon %>
+  </li>
+
+  <li>
+    <strong>Sealing:</strong>
+    <%= @rsvp.sealing %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: rsvp_path(@conn, :edit, @rsvp) %>
+<%= link "Back", to: rsvp_path(@conn, :index) %>
