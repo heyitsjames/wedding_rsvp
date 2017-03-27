@@ -38,7 +38,7 @@ defmodule Wedding.Endpoint do
     key: "_wedding_key",
     signing_salt: "uB/j+cV8"
 
-  plug Corsica, origins: "*", allow_headers: ["Content-Type"]
+  plug Corsica, origins: "*", allow_headers: ["accept", "Content-Type"]
 
   plug Wedding.Router
 end
